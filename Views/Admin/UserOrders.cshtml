@@ -1,0 +1,49 @@
+@model IEnumerable<finalTicket.Models.Order>
+
+@{
+    ViewData["Title"] = "User Orders";
+}
+
+<h2>User Orders</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First().User.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Ticket.EventName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().OrderDate)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => order.User.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => order.Ticket.EventName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => order.Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => order.OrderDate)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-controller="Dashboard" asp-action="AdminDashboard" class="btn btn-secondary">Back to Dashboard</a>
+</div>

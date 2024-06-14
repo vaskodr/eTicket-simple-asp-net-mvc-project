@@ -1,0 +1,28 @@
+@model finalTicket.Models.ViewModels.ManageBalanceViewModel
+
+@{
+    ViewData["Title"] = "Manage Balance";
+}
+
+<h2>Manage Balance</h2>
+
+<h4>Current Balance: @Model.CurrentBalance</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ManageBalance">
+            <div class="form-group">
+                <label asp-for="AddAmount" class="control-label"></label>
+                <input asp-for="AddAmount" class="form-control" />
+                <span asp-validation-for="AddAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add Balance" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="UserDashboard" class="btn btn-secondary">Back to Dashboard</a>
+</div>

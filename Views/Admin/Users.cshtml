@@ -1,0 +1,27 @@
+@model List<finalTicket.Models.ApplicationUser>
+
+@{
+    ViewData["Title"] = "Users";
+}
+
+<h2>Users</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Username</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.UserName</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<div>
+    <a asp-controller="Dashboard" asp-action="AdminDashboard" class="btn btn-secondary">Back to Dashboard</a>
+</div>
